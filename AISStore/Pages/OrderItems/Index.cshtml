@@ -1,0 +1,42 @@
+@page
+@model AISStore.Pages.OrderItems.IndexModel
+
+@{
+    ViewData["Title"] = "Состав заказа";
+}
+
+<h1>Состав заказов</h1>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderItem[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderItem[0].Item)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.OrderItem) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.ItemId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OrderItemsId">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.OrderItemsId">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OrderItemsId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

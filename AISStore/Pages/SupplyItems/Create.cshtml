@@ -1,0 +1,41 @@
+@page
+@model AISStore.Pages.SupplyItems.CreateModel
+
+@{
+    ViewData["Title"] = "Товары поставки";
+}
+
+<h1>Создать</h1>
+
+<h4>Товар поставки</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SupplyItem.Name" class="control-label"></label>
+                <input asp-for="SupplyItem.Name" class="form-control" />
+                <span asp-validation-for="SupplyItem.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplyItem.Price" class="control-label"></label>
+                <input asp-for="SupplyItem.Price" class="form-control" />
+                <span asp-validation-for="SupplyItem.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplyItem.Description" class="control-label"></label>
+                <input asp-for="SupplyItem.Description" class="form-control" />
+                <span asp-validation-for="SupplyItem.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+

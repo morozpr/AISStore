@@ -1,0 +1,25 @@
+@page
+@model AISStore.Pages.EmployeeTypes.DetailsModel
+
+@{
+    ViewData["Title"] = "Должности";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Должность</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EmployeeType.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EmployeeType.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.EmployeeType.EmployeeTypeId">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

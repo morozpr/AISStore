@@ -1,0 +1,36 @@
+@page
+@model AISStore.Pages.ItemTypes.IndexModel
+
+@{
+    ViewData["Title"] = "Тип товара";
+}
+
+<h1>Тип товара</h1>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemType[0].Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ItemType) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ItemTypeId">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ItemTypeId">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ItemTypeId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

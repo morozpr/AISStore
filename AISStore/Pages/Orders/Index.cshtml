@@ -1,0 +1,54 @@
+@page
+@model AISStore.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Заказы";
+}
+
+<h1>Заказ</h1>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Timestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderItems)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.ClientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderItems.OrderItemsId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OrderId">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.OrderId">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OrderId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

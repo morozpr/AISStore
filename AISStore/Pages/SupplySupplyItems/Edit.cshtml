@@ -1,0 +1,37 @@
+@page
+@model AISStore.Pages.SupplySupplyItems.EditModel
+
+@{
+    ViewData["Title"] = "Состав поставки";
+}
+
+<h1>Изменить</h1>
+
+<h4>Состав поставки</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SupplySupplyItem.SupplyItemsId" />
+            <div class="form-group">
+                <label asp-for="SupplySupplyItem.SupplyId" class="control-label"></label>
+                <select asp-for="SupplySupplyItem.SupplyId" class="form-control" asp-items="ViewBag.SupplyId"></select>
+                <span asp-validation-for="SupplySupplyItem.SupplyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplySupplyItem.SupplyItemId" class="control-label"></label>
+                <select asp-for="SupplySupplyItem.SupplyItemId" class="form-control" asp-items="ViewBag.SupplyItemId"></select>
+                <span asp-validation-for="SupplySupplyItem.SupplyItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>
+

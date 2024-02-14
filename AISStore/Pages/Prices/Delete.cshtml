@@ -1,0 +1,40 @@
+@page
+@model AISStore.Pages.Prices.DeleteModel
+
+@{
+    ViewData["Title"] = "Цены";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены?</h3>
+<div>
+    <h4>Цена</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.Value)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.DataSet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.DataSet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.DataUnSet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.DataUnSet)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Price.PriceId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к списку</a>
+    </form>
+</div>

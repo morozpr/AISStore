@@ -1,0 +1,48 @@
+@page
+@model AISStore.Pages.Prices.IndexModel
+
+@{
+    ViewData["Title"] = "Цены";
+}
+
+<h1>Цены</h1>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Price[0].Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price[0].DataSet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price[0].DataUnSet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Price) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataUnSet)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PriceId">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.PriceId">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PriceId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

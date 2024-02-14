@@ -1,0 +1,42 @@
+@page
+@model AISStore.Pages.Supplies.IndexModel
+
+@{
+    ViewData["Title"] = "Поставки";
+}
+
+<h1>Поставки</h1>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].Timestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].Provider)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Supply) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provider.ProviderId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SupplyId">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.SupplyId">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SupplyId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

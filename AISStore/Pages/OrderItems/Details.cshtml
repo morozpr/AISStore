@@ -1,0 +1,31 @@
+@page
+@model AISStore.Pages.OrderItems.DetailsModel
+
+@{
+    ViewData["Title"] = "Состав заказа";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Состав заказа</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderItem.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderItem.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderItem.Item)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderItem.Item.ItemId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.OrderItem.OrderItemsId">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

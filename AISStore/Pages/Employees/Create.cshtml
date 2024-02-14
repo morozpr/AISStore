@@ -1,0 +1,65 @@
+@page
+@model AISStore.Pages.Employees.CreateModel
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<h1>Создать</h1>
+
+<h4>Сотрудник</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Employee.Name" class="control-label"></label>
+                <input asp-for="Employee.Name" class="form-control" />
+                <span asp-validation-for="Employee.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Surname" class="control-label"></label>
+                <input asp-for="Employee.Surname" class="form-control" />
+                <span asp-validation-for="Employee.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Patronymic" class="control-label"></label>
+                <input asp-for="Employee.Patronymic" class="form-control" />
+                <span asp-validation-for="Employee.Patronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Phone" class="control-label"></label>
+                <input asp-for="Employee.Phone" class="form-control" />
+                <span asp-validation-for="Employee.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Email" class="control-label"></label>
+                <input asp-for="Employee.Email" class="form-control" />
+                <span asp-validation-for="Employee.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Login" class="control-label"></label>
+                <input asp-for="Employee.Login" class="form-control" />
+                <span asp-validation-for="Employee.Login" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Password" class="control-label"></label>
+                <input asp-for="Employee.Password" class="form-control" />
+                <span asp-validation-for="Employee.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.EmployeeTypeId" class="control-label"></label>
+                <select asp-for="Employee.EmployeeTypeId" class ="form-control" asp-items="ViewBag.EmployeeTypeId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+

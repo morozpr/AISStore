@@ -1,0 +1,37 @@
+@page
+@model AISStore.Pages.Providers.DetailsModel
+
+@{
+    ViewData["Title"] = "Поставщики";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Поставщик</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Provider.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Provider.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Provider.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Provider.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Provider.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Provider.Address)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Provider.ProviderId">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

@@ -1,0 +1,60 @@
+@page
+@model AISStore.Pages.Clients.IndexModel
+
+@{
+    ViewData["Title"] = "Клиенты";
+}
+
+<h1>Клиенты</h1>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Client[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client[0].Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client[0].Patronymic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client[0].Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Client) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patronymic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ClientId">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ClientId">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ClientId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

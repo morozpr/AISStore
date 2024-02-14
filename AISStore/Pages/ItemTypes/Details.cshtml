@@ -1,0 +1,25 @@
+@page
+@model AISStore.Pages.ItemTypes.DetailsModel
+
+@{
+    ViewData["Title"] = "Тип товара";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Тип товара</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemType.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemType.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ItemType.ItemTypeId">Edit</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

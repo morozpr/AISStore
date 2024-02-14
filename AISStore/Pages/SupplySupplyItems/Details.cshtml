@@ -1,0 +1,31 @@
+@page
+@model AISStore.Pages.SupplySupplyItems.DetailsModel
+
+@{
+    ViewData["Title"] = "Состав поставки";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Состав поставки</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SupplySupplyItem.Supply)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SupplySupplyItem.Supply.SupplyId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SupplySupplyItem.SupplyItem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SupplySupplyItem.SupplyItem.SupplyItemId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.SupplySupplyItem.SupplyItemsId">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

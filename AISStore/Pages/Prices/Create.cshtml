@@ -1,0 +1,41 @@
+@page
+@model AISStore.Pages.Prices.CreateModel
+
+@{
+    ViewData["Title"] = "Цены";
+}
+
+<h1>Создать</h1>
+
+<h4>Цена</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Price.Value" class="control-label"></label>
+                <input asp-for="Price.Value" class="form-control" />
+                <span asp-validation-for="Price.Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price.DataSet" class="control-label"></label>
+                <input asp-for="Price.DataSet" class="form-control" />
+                <span asp-validation-for="Price.DataSet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price.DataUnSet" class="control-label"></label>
+                <input asp-for="Price.DataUnSet" class="form-control" />
+                <span asp-validation-for="Price.DataUnSet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+

@@ -1,0 +1,37 @@
+@page
+@model AISStore.Pages.Prices.DetailsModel
+
+@{
+    ViewData["Title"] = "Цены";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Цена</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.Value)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.DataSet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.DataSet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.DataUnSet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.DataUnSet)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Price.PriceId">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>
